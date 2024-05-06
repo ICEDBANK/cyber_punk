@@ -1,0 +1,28 @@
+const quizData = [
+    {
+      question: 'Which language runs in a web browser?',
+      choices: ['Java', 'Python', 'JavaScript'],
+      correctAnswer: 'JavaScript',
+    },
+    {
+      question: 'Who is responsible for the creation of the JavaScript programming language?',
+      choices: ['Larry Wall', 'Brendan Eich', 'Guido van Rossum'],
+      correctAnswer: 'Brendan Eich',
+    },
+    {
+      question: 'Who developed the React.js library for building user interfaces?',
+      choices: ['Evan You', 'Jordan Walke', 'Ryan Dahl'],
+      correctAnswer: 'Jordan Walke',
+    },
+    {
+      question: 'React is an open-source JavaScript library developed by what company?',
+      choices: ['Facebook', 'Microsoft', 'Google'],
+      correctAnswer: 'Facebook',
+    },
+    {
+      question: '_______ is a package manager for JavaScript programming language.',
+      choices: ['cli', 'wpm', 'npm'],
+      correctAnswer: 'npm',
+    },
+
+  ]
