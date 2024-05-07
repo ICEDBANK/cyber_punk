@@ -41,6 +41,16 @@ function App() {
     setResult(false);
   };
 
+  const chosenAnswerHandle = () => {
+
+    if(){
+
+    }else {
+
+    }
+
+  }
+
   return (
     <>
       <div className="quiz-container">
@@ -54,7 +64,7 @@ function App() {
             <h2>{quizData[0].question}</h2>
             <ul>
               {quizData[currentQuestion].choices.map((choice, index) => (
-                <li key={index}>{choice}</li>
+                <li key={index} onClick={()=> {chosenAnswerHandle(choice)}}>{choice}</li>
               ))}
             </ul>
           </div>
