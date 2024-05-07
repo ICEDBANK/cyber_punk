@@ -36,10 +36,10 @@ function App() {
   const [result, setResult] = useState (false);
 
   const handleReloadClick = () => {
-    setCurrentQuestion(0);
-    setScore (0);
-    setResult(false);
-  };
+  setCurrentQuestion(0);
+  setScore(0);
+  setResult(false);
+};
 
   const chosenAnswerHandle = (selectedAnswer) => {
   if (selectedAnswer === quizData[currentQuestion].correctAnswer) {
