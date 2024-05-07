@@ -57,9 +57,9 @@ function App() {
         ) : (<div className="quiz-question">
           <h2>{quizData[0].question}</h2>
           <ul>
-            {quizData[currentQuestion].choices.map((choice, index) =>{
+            {quizData[currentQuestion].choices.map((choice, index) => (
               <li key={index}>{choice}</li>
-            })}
+            ))}
           </ul>
         </div>
       </div>
