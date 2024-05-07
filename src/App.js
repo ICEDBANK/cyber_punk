@@ -1,8 +1,10 @@
+// Import the useState hook from React and the CSS file
 import { useState } from 'react';
 import './App.css';
 
+// Define the functional component App
 function App() {
-
+  // Array containing quiz questions, choices, and correct answers
   const quizData = [
     {
       question: 'Which language runs in a web browser?',
@@ -31,43 +33,49 @@ function App() {
     },
   ];
 
+  // State variables to track current question, score, and quiz result
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState (0);
-  const [result, setResult] = useState (false);
+  const [score, setScore] = useState(0);
+  const [result, setResult] = useState(false);
 
+  // Function to handle click event for reload button
   const handleReloadClick = () => {
-  setCurrentQuestion(0);
-  setScore(0);
-  setResult(false);
-};
+    setCurrentQuestion(0);
+    setScore(0);
+    setResult(false);
+  };
 
+  // Function to handle selection of an answer
   const chosenAnswerHandle = (selectedAnswer) => {
-  if (selectedAnswer === quizData[currentQuestion].correctAnswer) {
-    setScore((prevScore) => prevScore + 1);
-  }
-  if (currentQuestion < quizData.length - 1) {
-    setCurrentQuestion((prevQuestion) => prevQuestion + 1);
-  } else {
-    setResult(true);
-  }
-};
+    // Check if selected answer is correct and update score
+    if (selectedAnswer === quizData[currentQuestion].correctAnswer) {
+      setScore((prevScore) => prevScore + 1);
+    }
+    // Move to the next question or show result if it's the last question
+    if (currentQuestion < quizData.length - 1) {
+      setCurrentQuestion((prevQuestion) => prevQuestion + 1);
+    } else {
+      setResult(true);
+    }
+  };
 
-
-
+  // JSX markup for rendering the quiz component
   return (
     <>
       <div className="quiz-container">
         {result ? (
+          // Show quiz result and reload button if quiz is completed
           <div>
             <h2>{`You Answered ${score}/${quizData.length} Questions Correctly, Congratulations`}</h2>
             <button onClick={handleReloadClick}>Try Again!</button>
           </div>
         ) : (
+          // Show current question and choices if quiz is ongoing
           <div className="quiz-question">
             <h2>{quizData[currentQuestion].question}</h2>
             <ul>
               {quizData[currentQuestion].choices.map((choice, index) => (
-              <li key={index} onClick={() => { chosenAnswerHandle(choice) }}>{choice}</li>
+                <li key={index} onClick={() => { chosenAnswerHandle(choice) }}>{choice}</li>
               ))}
             </ul>
           </div>
@@ -77,4 +85,5 @@ function App() {
   );
 }
 
+// Export the App component
 export default App;
