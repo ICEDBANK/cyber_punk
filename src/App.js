@@ -49,12 +49,12 @@ function App() {
     <>
     
       <div className="quiz-container">
-        {showResults}
+        {result ? (
         <div>
           <h2>{`You Answered ${score}/${quizData.length} Questions Correctly, Congratulations`}</h2>
           <button onClick={handleReloadClick}>Try Again!</button>
         </div>
-        <div className="quiz-question">
+        ) : (<div className="quiz-question">
           <h2>{quizData[0].question}</h2>
           <ul>
             {quizData[currentQuestion].choices.map((choice, index) =>{
@@ -63,7 +63,9 @@ function App() {
           </ul>
         </div>
       </div>
-
+      )}
+        
+        
     </>
   );
 }
