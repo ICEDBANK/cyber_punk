@@ -57,7 +57,7 @@ function App() {
           <h2>{quizData[0].question}</h2>
           <ul>
             {quizData[currentQuestion].choices.map((choice, index) =>{
-              <li>{}</li>
+              <li key={index}>{choice}</li>
             })}
           </ul>
         </div>
