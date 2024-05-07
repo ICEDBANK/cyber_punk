@@ -49,6 +49,7 @@ function App() {
     <>
     
       <div className="quiz-container">
+        {showResults}
         <div>
           <h2>{`You Answered ${score}/${quizData.length} Questions Correctly, Congratulations`}</h2>
           <button onClick={handleReloadClick}>Try Again!</button>
