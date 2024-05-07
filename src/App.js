@@ -41,13 +41,19 @@ function App() {
     setResult(false);
   };
 
-  const chosenAnswerHandle = () => {
+  const chosenAnswerHandle = (selectedAnswer) => {
 
     if(selectedAnswer === quizData[currentQuestion].correctAnswer){
 
-      setScore((prevScore) => prevScore + 1)
+      setScore((prevScore) => prevScore + 1);
+
+    }if (currentQuestion < quizData.length) {
+
+      setCurrentQuestion((prevQuestion) => prevQuestion + 1);
 
     }else {
+
+      setResult(true);
 
     }
 
