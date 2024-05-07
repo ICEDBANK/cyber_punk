@@ -43,7 +43,9 @@ function App() {
 
   const chosenAnswerHandle = () => {
 
-    if(){
+    if(selectedAnswer === quizData[currentQuestion].correctAnswer){
+
+      setScore((prevScore) => prevScore + 1)
 
     }else {
 
