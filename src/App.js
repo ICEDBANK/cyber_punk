@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import './App.css';
 
@@ -30,7 +29,6 @@ function App() {
       choices: ['cli', 'wpm', 'npm'],
       correctAnswer: 'npm',
     },
-
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -38,34 +36,30 @@ function App() {
   const [result, setResult] = useState (false);
 
   const handleReloadClick = () => {
-
     setCurrentQuestion(0);
     setScore (0);
     setResult(false);
-
-  }
+  };
 
   return (
     <>
-    
       <div className="quiz-container">
         {result ? (
-        <div>
-          <h2>{`You Answered ${score}/${quizData.length} Questions Correctly, Congratulations`}</h2>
-          <button onClick={handleReloadClick}>Try Again!</button>
-        </div>
-        ) : (<div className="quiz-question">
-          <h2>{quizData[0].question}</h2>
-          <ul>
-            {quizData[currentQuestion].choices.map((choice, index) => (
-              <li key={index}>{choice}</li>
-            ))}
-          </ul>
-        </div>
+          <div>
+            <h2>{`You Answered ${score}/${quizData.length} Questions Correctly, Congratulations`}</h2>
+            <button onClick={handleReloadClick}>Try Again!</button>
+          </div>
+        ) : (
+          <div className="quiz-question">
+            <h2>{quizData[0].question}</h2>
+            <ul>
+              {quizData[currentQuestion].choices.map((choice, index) => (
+                <li key={index}>{choice}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
-      )}
-        
-        
     </>
   );
 }
